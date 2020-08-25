@@ -1,0 +1,3 @@
+[submodule "histnorm"]
+	path = histnorm
+	url = git@github.com:martialblog/histnorm.git
