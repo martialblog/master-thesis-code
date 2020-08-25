@@ -1,5 +1,4 @@
 #Emacs
-
 \#*
 .\#*
 
@@ -8,7 +7,11 @@
 *.tar.gz
 *.tar
 
+# Data
+*.json
+
 #Python Defaults
+*.pickle
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
