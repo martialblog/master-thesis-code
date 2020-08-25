@@ -9,6 +9,7 @@
 
 # Data
 *.json
+*.png
 
 #Python Defaults
 *.pickle
