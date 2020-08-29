@@ -10,5 +10,7 @@ source .venv/bin/activate
 # (optional) pip3 install -U pip
 pip3 install -r requirements.txt
 
+jupyter labextension install jupyterlab-plotly
+
 jupyter lab
 ```
