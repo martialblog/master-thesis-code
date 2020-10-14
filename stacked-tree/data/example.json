@@ -1,0 +1,71 @@
+{
+  "name": "Lorem ipsum",
+  "distance": 5.5,
+  "children": [
+    {
+      "name": "dolor",
+      "distance": 1.5,
+      "children": [
+        {
+          "name": "sit",
+          "distance": 0.0,
+          "children": []
+        },
+        {
+          "name": "amet",
+          "distance": 0.71,
+          "children": [
+            {
+              "name": "consectetur",
+              "distance": 0.0,
+              "children": []
+            },
+            {
+              "name": "adipiscing",
+              "distance": 0.0,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elit",
+      "distance": 2.05,
+      "children": [
+        {
+          "name": "aenean",
+          "distance": 0.0,
+          "children": []
+        },
+        {
+          "name": "non",
+          "distance": 1.9,
+          "children": [
+            {
+              "name": "facilisis",
+              "distance": 0.0,
+              "children": []
+            },
+            {
+              "name": "risus",
+              "distance": 1.12,
+              "children": [
+                {
+                  "name": "morbi",
+                  "distance": 0.0,
+                  "children": []
+                },
+                {
+                  "name": "lobortis",
+                  "distance": 0.0,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
