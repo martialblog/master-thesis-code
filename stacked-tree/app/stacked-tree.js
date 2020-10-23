@@ -51,7 +51,7 @@ function initialiseUI(data) {
   document.getElementById("graph-cutoff-range").min = cutoffMin;
   document.getElementById("graph-cutoff-range").max = cutoffMax;
   document.getElementById("graph-cutoff-range").step = 0.1;
-  document.getElementById("graph-cutoff-value").textContent = document.getElementById("graph-cutoff-range").value
+  document.getElementById("graph-cutoff-value").textContent = document.getElementById("graph-cutoff-range").value;
 
   renderGraph();
 }
@@ -66,15 +66,15 @@ function showStackSelection(event, data) {
 
   document.getElementById("stack-selection").classList.remove("d-none");
 
-  const leaves = data.leaves()
-  const selection = d3.select("#stack-selection-list").selectAll('li').data(leaves)
+  const leaves = data.leaves();
+  const selection = d3.select("#stack-selection-list").selectAll('li').data(leaves);
 
   selection.enter().append('li')
     .merge(selection)
     .attr("class", "nav-item nav-link")
-    .html(d => d.data.name)
+    .html(d => d.data.name);
 
-  selection.exit().remove()
+  selection.exit().remove();
 }
 
 /**
@@ -89,8 +89,8 @@ function reduceLinks(node) {
     if (node !== root) {
       if (node.children) {
         let farthestChild = node.children.reduce(function(prev, current) {
-          return (prev.y > current.y) ? prev : current
-        })
+          return (prev.y > current.y) ? prev : current;
+        });
         _links.push({source: node.parent, target: node});
         _links.push({source: node, target: farthestChild});
       }
@@ -125,12 +125,12 @@ function renderLinks(root) {
 
   let linksEnter = links.enter()
       .append("path")
-      .attr("class", "link")
+      .attr("class", "link");
 
   linksEnter.merge(links)
     .attr("d", elbow_h);
 
-  links.exit().remove()
+  links.exit().remove();
 }
 
 /**
@@ -158,15 +158,15 @@ function renderNodes(root) {
 
   nodesEnter.merge(nodes)
     .attr("transform", d => { return "translate(" + (d.x - nodeAttr.width / 2)  + "," + (d.y - nodeAttr.height / 2) + ")"; })
-    .classed("node-child", d => { return d.children ? false : true});
+    .classed("node-child", d => { return d.children ? false : true;});
 
   let textsEnter = texts.enter()
       .append("text")
       .attr("class", "node-text");
 
   textsEnter.merge(texts)
-    .attr("x", d => {return d.x + 5})
-    .attr("y", d => {return d.y})
+    .attr("x", d => {return d.x + 5;})
+    .attr("y", d => {return d.y;})
     .text(d => { return d.children ? d.leaves().length : ""; });
 
   texts.exit().remove();
@@ -190,7 +190,7 @@ function renderGraph() {
 
   const main = d3.select("#chart-main");
   const zoom = d3.zoom().on("zoom", e => {
-    main.attr("transform", (transform = e.transform))
+    main.attr("transform", (transform = e.transform));
   });
 
   window.container.call(zoom);
@@ -204,7 +204,7 @@ function renderGraph() {
  * @param {node}
  */
 function getAllLeaves(node) {
-  let leaves = []
+  let leaves = [];
   function _getLeaves(node) {
     if (node.children.length == 0) {
       leaves.push({
@@ -212,7 +212,7 @@ function getAllLeaves(node) {
         "distance": node.distance,
         "children": []
       });
-      return
+      return;
     }
     for (let child in node.children) {
       _getLeaves(node.children[child]);
@@ -232,7 +232,7 @@ function cutTree(node, threshold) {
   function _cut(node) {
     if (node.distance <= threshold && node.children) {
       node.children = getAllLeaves(node);
-      return
+      return;
     }
     for (let child in node.children) {
       _cut(node.children[child]);
