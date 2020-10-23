@@ -1,4 +1,6 @@
 \#*
 .\#*
 data/*.json
+node_modules/
+!package.json
 !data/example.json
