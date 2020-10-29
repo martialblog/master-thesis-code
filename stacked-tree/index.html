@@ -39,11 +39,11 @@
                 <span>Visualisation Options</span>
               </h6>
               <div class="input-group px-3 mt-1 mb-1">
-                <input type="range" class="form-range" min="0" max="10" step="0.1" id="graph-cutoff-range" onchange="updateTreeCutoff(this.value)" oninput="updateTreeCutoff(this.value)">
+                <input type="range" class="form-range" min="0" max="10" step="0.1" id="range-graph-cutoff" onchange="updateTreeCutoff(this.value)" oninput="updateTreeCutoff(this.value)">
               </div>
 
               <div class="btn-group px-3 mt-1 mb-1" role="group" aria-label="Zoom">
-                <button type="button" class="btn btn-secondary" id="graph-cutoff-value" disabled></button>
+                <button type="button" class="btn btn-secondary" id="value-graph-cutoff" disabled></button>
                 <button type="button" class="btn btn-outline-secondary" id="button-reset-zoom" onclick="resetZoom();">Reset Zoom</button>
               </div>
             </div>

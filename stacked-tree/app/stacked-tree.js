@@ -94,10 +94,10 @@ function initialiseUI(data) {
     }
   });
 
-  document.getElementById("graph-cutoff-range").min = cutoffMin;
-  document.getElementById("graph-cutoff-range").max = cutoffMax;
-  document.getElementById("graph-cutoff-range").step = 0.1;
-  document.getElementById("graph-cutoff-value").textContent = document.getElementById("graph-cutoff-range").value;
+  document.getElementById("range-graph-cutoff").min = cutoffMin;
+  document.getElementById("range-graph-cutoff").max = cutoffMax;
+  document.getElementById("range-graph-cutoff").step = 0.1;
+  document.getElementById("value-graph-cutoff").textContent = document.getElementById("range-graph-cutoff").value;
 
   renderGraph();
 }
@@ -113,12 +113,12 @@ function showStackSelection(event, data) {
   document.getElementById("stack-selection").classList.remove("d-none");
 
   const leaves = data.leaves();
-  const selection = d3.select("#stack-selection-list").selectAll('li').data(leaves);
+  const selection = d3.select("#stack-selection-list").selectAll("li").data(leaves);
 
   d3.selectAll(".node")
     .classed("node-selected", d => { return data === d ? true : false; });
 
-  selection.enter().append('li')
+  selection.enter().append("li")
     .merge(selection)
     .attr("class", "nav-item nav-link")
     .html(d => d.data.name);
@@ -298,7 +298,7 @@ function cutTree(node, threshold) {
  */
 function updateTreeCutoff(value) {
 
-  document.getElementById("graph-cutoff-value").textContent = value;
+  document.getElementById("value-graph-cutoff").textContent = value;
 
   // Copy Graph data into new object, since the cut function rearanges the tree
   let _data = JSON.parse(JSON.stringify(window.data));
