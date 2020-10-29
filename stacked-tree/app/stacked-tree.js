@@ -22,7 +22,6 @@ function resetZoom() {
   main.attr("transform", "translate(0, 10) scale(1)");
 }
 
-
 /**
  * Search String/Regex in tree leaves
  */
@@ -206,8 +205,8 @@ function renderNodes(root) {
     .attr("height", nodeAttr.height);
 
   nodesEnter.merge(nodes)
-    .attr("transform", d => { return "translate(" + (d.x - nodeAttr.width / 2)  + "," + (d.y - nodeAttr.height / 2) + ")"; })
-    .classed("node-child", d => { return d.children ? false : true;});
+    .attr("transform", d => { return "translate(" + (d.x - nodeAttr.width / 2) + "," + (d.y - nodeAttr.height / 2) + ")"; })
+    .classed("node-child", d => { return d.children ? false : true; });
 
   let textsEnter = texts.enter()
       .append("text")
@@ -221,7 +220,6 @@ function renderNodes(root) {
   texts.exit().remove();
   nodes.exit().remove();
 }
-
 
 /**
  * Render Wrapper
