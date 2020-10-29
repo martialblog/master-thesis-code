@@ -104,7 +104,6 @@ function initialiseUI(data) {
  * @param {event}
  * @param {data}
  */
-
 function showStackSelection(event, data) {
 
   document.getElementById("stack-selection").classList.remove("d-none");
@@ -163,6 +162,7 @@ function elbow_h(data) {
 
 /**
  * Render the d3 links
+ * @param {root} Hierarchy root
  */
 function renderLinks(root) {
 
@@ -181,6 +181,7 @@ function renderLinks(root) {
 
 /**
  * Render the d3 nodes
+ * @param {root} Hierarchy root
  */
 function renderNodes(root) {
 
@@ -220,7 +221,7 @@ function renderNodes(root) {
 }
 
 /**
- * Render Wrapper
+ * Rendering Wrapper
  */
 function renderGraph() {
 
@@ -254,7 +255,7 @@ function renderGraph() {
 function getAllLeaves(node) {
   let leaves = [];
   function _getLeaves(node) {
-    if (node.children.length == 0) {
+    if (node.children.length === 0) {
       leaves.push({
         "name": node.name,
         "distance": node.distance,
@@ -273,8 +274,8 @@ function getAllLeaves(node) {
 
 /**
  * Restructure tree using the distance.
- * @param {node}
- * @param {threshold}
+ * @param {node} Hierarchy root
+ * @param {threshold} Threshold for tree cutoff
  */
 function cutTree(node, threshold) {
   function _cut(node) {

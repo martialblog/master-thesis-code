@@ -3,7 +3,8 @@
   "scripts": {
     "js-lint": "eslint --ext .js app",
     "css-lint": "stylelint app/*.css",
-    "html-lint": "htmlhint index.html"
+    "html-lint": "htmlhint index.html",
+    "lint": "yarn run js-lint; yarn run css-lint; yarn run html-lint"
   },
   "devDependencies": {
     "eslint": "^7.11.0",
