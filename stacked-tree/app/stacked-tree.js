@@ -24,17 +24,32 @@ function resetZoom() {
 
 
 /**
- * Search text/Regex in tree leaves
+ * Search String/Regex in tree leaves
  */
 function searchTree() {
 
   const search = document.getElementById("input-search-tree").value;
 
+  // Reset colour
+  d3.selectAll(".link").style("stroke", "#6c757d");
+
   if (window.data === undefined) {
     return;
   }
 
-  console.log(search);
+  if (search === "") {
+    return;
+  }
+
+  let links = d3.selectAll(".link").filter(function(link) {
+    let leaves = link.target.leaves();
+    if (leaves.find(d => d.data.name.match(search))) {
+      return d3.select(link);
+    }
+  });
+
+  // Apply colour
+  d3.selectAll(links).style("stroke", "#dc3545");
 }
 
 /**
