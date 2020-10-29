@@ -34,7 +34,7 @@ function searchTree() {
     return;
   }
 
-  if (search === "") {
+  if (_search === "") {
     d3.selectAll(".link").classed("link-selected", false);
     return;
   }
@@ -116,7 +116,7 @@ function showStackSelection(event, data) {
 
   selection.enter().append("li")
     .merge(selection)
-    .attr("class", "nav-item nav-link")
+    .attr("class", "nav-item nav-link list-group-item")
     .html(d => d.data.name);
 
   selection.exit().remove();
