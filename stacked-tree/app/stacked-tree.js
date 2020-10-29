@@ -1,9 +1,40 @@
 /**
+ * Add enter button trigger to input fields
+ */
+document.getElementById("input-load-file").addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("button-load-file").click();
+  }
+});
+document.getElementById("input-search-tree").addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("button-search-tree").click();
+  }
+});
+
+/**
  * Reset Zoom
  */
 function resetZoom() {
   const main = d3.select("#chart-main");
   main.attr("transform", "translate(0, 10) scale(1)");
+}
+
+
+/**
+ * Search text/Regex in tree leaves
+ */
+function searchTree() {
+
+  const search = document.getElementById("input-search-tree").value;
+
+  if (window.data === undefined) {
+    return;
+  }
+
+  console.log(search);
 }
 
 /**
@@ -12,7 +43,7 @@ function resetZoom() {
  */
 function loadFile(path = "/data/") {
 
-  const filename = document.getElementById("load-file-name").value ? document.getElementById("load-file-name").value : "example.json";
+  const filename = document.getElementById("input-load-file").value ? document.getElementById("input-load-file").value : "example.json";
 
   d3.json(path + filename)
     .then(data => {
