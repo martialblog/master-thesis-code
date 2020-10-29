@@ -1,9 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js app"
+    "js-lint": "eslint --ext .js app",
+    "css-lint": "stylelint app/*.css"
   },
   "devDependencies": {
-    "eslint": "^7.11.0"
+    "eslint": "^7.11.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0"
   }
 }
