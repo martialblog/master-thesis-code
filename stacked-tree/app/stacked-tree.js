@@ -27,28 +27,26 @@ function resetZoom() {
  */
 function searchTree() {
 
-  const search = document.getElementById("input-search-tree").value;
-
-  // Reset colour
-  d3.selectAll(".link").style("stroke", "#6c757d");
+  const _search = document.getElementById("input-search-tree").value;
+  const search = new RegExp(_search, "i");
 
   if (window.data === undefined) {
     return;
   }
 
   if (search === "") {
+    d3.selectAll(".link").classed("link-selected", false);
     return;
   }
 
-  let links = d3.selectAll(".link").filter(function(link) {
-    let leaves = link.target.leaves();
-    if (leaves.find(d => d.data.name.match(search))) {
-      return d3.select(link);
-    }
-  });
-
-  // Apply colour
-  d3.selectAll(links).style("stroke", "#dc3545");
+  d3.selectAll(".link")
+    .classed("link-selected", d => {
+      let leaves = d.target.leaves();
+      if (leaves.find(d => d.data.name.match(search))) {
+        return true;
+      } else
+        return false;
+    });
 }
 
 /**

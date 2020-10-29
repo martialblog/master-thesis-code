@@ -72,7 +72,12 @@ body {
   fill: none;
   stroke: #6c757d;
   stroke-width: 1px;
-  opacity:1;
+  opacity: 1;
+}
+
+.link-selected {
+  stroke: #dc3545 !important;
+  stroke-width: 2px;
 }
 
 .node {
