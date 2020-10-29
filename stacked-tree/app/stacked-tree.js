@@ -96,7 +96,7 @@ function initialiseUI(data) {
   document.getElementById("range-graph-cutoff").min = cutoffMin;
   document.getElementById("range-graph-cutoff").max = cutoffMax;
   document.getElementById("range-graph-cutoff").step = 0.1;
-  document.getElementById("value-graph-cutoff").textContent = document.getElementById("range-graph-cutoff").value;
+  document.getElementById("value-graph-cutoff").value = document.getElementById("range-graph-cutoff").value;
 
   renderGraph();
 }
@@ -296,11 +296,19 @@ function cutTree(node, threshold) {
  */
 function updateTreeCutoff(value) {
 
-  document.getElementById("value-graph-cutoff").textContent = value;
+  let _value;
+
+  const valueMax = document.getElementById("range-graph-cutoff").max;
+  const valueMin = document.getElementById("range-graph-cutoff").min;
+  _value = value >= valueMax ? valueMax : value;
+  _value = value <= valueMin ? valueMin : value;
+
+  document.getElementById("value-graph-cutoff").value = _value;
+  document.getElementById("range-graph-cutoff").value = _value;
 
   // Copy Graph data into new object, since the cut function rearanges the tree
   let _data = JSON.parse(JSON.stringify(window.data));
-  let data = cutTree(_data, value);
+  let data = cutTree(_data, _value);
 
   window.hiera = d3.hierarchy(data);
 
