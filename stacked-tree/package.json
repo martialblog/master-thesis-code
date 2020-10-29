@@ -2,10 +2,12 @@
   "private": true,
   "scripts": {
     "js-lint": "eslint --ext .js app",
-    "css-lint": "stylelint app/*.css"
+    "css-lint": "stylelint app/*.css",
+    "html-lint": "htmlhint index.html"
   },
   "devDependencies": {
     "eslint": "^7.11.0",
+    "htmlhint": "^0.14.1",
     "stylelint": "^13.7.2",
     "stylelint-config-standard": "^20.0.0"
   }
