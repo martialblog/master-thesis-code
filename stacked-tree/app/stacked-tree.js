@@ -232,7 +232,10 @@ function renderGraph() {
   const width = document.getElementById("chart-container").clientHeight * 0.90;
   const ratio = 1;
 
-  window.container = d3.select("#chart-svg").attr("width", width).attr("height", height);
+  window.container = d3.select("#chart-svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", [-height / 4, -width / 4, width, height]);
   const tree = d3.stackedtree().nodeSize([40, 40]).ratio(ratio)(root);
 
   const main = d3.select("#chart-main");
