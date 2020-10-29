@@ -115,6 +115,9 @@ function showStackSelection(event, data) {
   const leaves = data.leaves();
   const selection = d3.select("#stack-selection-list").selectAll('li').data(leaves);
 
+  d3.selectAll(".node")
+    .classed("node-selected", d => { return data === d ? true : false; });
+
   selection.enter().append('li')
     .merge(selection)
     .attr("class", "nav-item nav-link")

@@ -83,3 +83,7 @@ body {
 .node-child {
   fill: #0d6efd;
 }
+
+.node-selected {
+  fill: #0dcaf0;
+}
