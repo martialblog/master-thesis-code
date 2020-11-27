@@ -4,18 +4,22 @@ This repository contains the source code for my master thesis.
 
 ## Jupyter Setup
 
-The Jupyter Notebooks provide an overview of the experiments.
+The Jupyter Notebooks provide an overview of the experiments and preprocessing.
 
 ```
 python3 -m venv
 source .venv/bin/activate
-# (optional) pip3 install -U pip
-pip3 install -r requirements.txt
 
+# (optional) pip update, if errors occur during installation
+pip3 install -U pip
+
+pip3 install -r requirements.txt
 jupyter labextension install jupyterlab-plotly
 
 jupyter lab
 ```
+
+**Hint:** Some Jupyter graphics require Node.js
 
 ## Stacked Tree Setup
 
