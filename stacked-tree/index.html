@@ -47,8 +47,8 @@
                 <input type="text" class="form-control" placeholder="1.0" aria-label="Cutoff Value" aria-describedby="label-graph-cutoff" id="value-graph-cutoff">
                 <button class="btn btn-outline-primary" type="button" id="button-graph-cutoff" onclick="updateTreeCutoff(document.getElementById('value-graph-cutoff').value)">Set</button>
               </div>
-              <div class="px-3 mt-2 mb-2">
-                <button class="btn btn-block btn-outline-secondary" type="button" id="button-reset-zoom" onclick="resetZoom();">Reset Zoom</button>
+              <div class="px-3 mt-2 mb-2 d-grid">
+                <button class="btn btn-outline-secondary" type="button" id="button-reset-zoom" onclick="resetZoom();">Reset Zoom</button>
               </div>
             </div>
 
@@ -56,6 +56,11 @@
               <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-1 mb-2 text-muted">
                 <span>Selection</span>
               </h6>
+              <div class="input-group input-group-sm px-3 mt-2 mb-2">
+                <span class="input-group-text" id="label-selection-filter">Filter:</span>
+                <input type="text" class="form-control" aria-label="Filter" aria-describedby="label-selection-filter" id="input-selection-filter" oninput="filterSelection()">
+                <button class="btn btn-outline-primary" type="button" id="button-selection-export" onclick="exportSelection()">Export</button>
+              </div>
               <ul id="stack-selection-list" class="nav flex-column mt-1 mb-1 list-group"></ul>
             </div>
 

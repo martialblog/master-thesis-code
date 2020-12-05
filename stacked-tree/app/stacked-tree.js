@@ -23,6 +23,28 @@ function resetZoom() {
 }
 
 /**
+ * Filter String/Regex in selection
+ */
+function filterSelection() {
+  const _filter = document.getElementById("input-selection-filter").value;
+  const filter = new RegExp(_filter, "i");
+
+  d3.selectAll(".stack-item")
+    .style("display", d => {
+      return (d.data.name.match(filter)) ? "block" : "none";
+    });
+}
+
+/**
+ * Export stack selection
+ */
+function exportSelection() {
+  // Select currently visible stack selection
+  const selection = d3.selectAll('.stack-item[style="display: block;"]')
+  // TODO: not working when the input is initially empty
+  console.log(selection)
+}
+/**
  * Search String/Regex in tree leaves
  */
 function searchTree() {
@@ -116,7 +138,7 @@ function showStackSelection(event, data) {
 
   selection.enter().append("li")
     .merge(selection)
-    .attr("class", "nav-item nav-link list-group-item")
+    .attr("class", "nav-item nav-link list-group-item stack-item")
     .html(d => d.data.name);
 
   selection.exit().remove();
