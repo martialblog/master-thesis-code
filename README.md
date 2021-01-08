@@ -1,6 +1,6 @@
-# Master Thesis
+# Master Thesis Code
 
-This repository contains the source code for my master thesis.
+This repository contains the source code for the master thesis: *Detection of historical spelling variations using cluster analysis and string similarity*.
 
 ## Jupyter Setup
 
