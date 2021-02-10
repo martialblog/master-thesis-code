@@ -1,4 +1,4 @@
-# Master Thesis Code
+# Detection of historical spelling variations using cluster analysisand string similarity
 
 This repository contains the source code for the master thesis: *Detection of historical spelling variations using cluster analysis and string similarity*.
 
